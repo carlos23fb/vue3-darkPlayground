@@ -1,6 +1,6 @@
 body{
     font-family: monospace;
-    padding: 2rem;
+    
     background-color: black;
 }
 
@@ -12,6 +12,6 @@ body{
     background-color: lightseagreen;
     width: max-content;
     
-    padding: 1rem;
+    
 }
 

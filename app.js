@@ -2,8 +2,20 @@ const app = Vue.createApp({
     data() {
         return {
             show: true,
-            title: 'Final Empire',
-            author: 'Brandon Sanderson',
+            books: [
+                {
+                    title: 'The name of the Wind',
+                    author: 'Patrick Rotfus'
+                },
+                {
+                    title: 'The way of Kings',
+                    author: 'Brandon Sanderson'
+                },
+                {
+                    title: 'Oathbringuer',
+                    author: 'Brandon Sanderson'
+                },
+            ],
             age: 54,
             x: 0,
             y: 0
@@ -17,7 +29,7 @@ const app = Vue.createApp({
             this.show = true ? !this.show : this.show
         },
         handleEvent($event){
-            console.log(`eje y: ${event.y} eje x: ${event.x}`)
+            console.log(`eje y: ${$event.y} eje x: ${$event.x}`)
         },
         handleMouseMove(event){
             this.y = event.y

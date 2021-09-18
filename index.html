@@ -16,36 +16,40 @@
     <div class="p-12" id="app">
         <div v-if="show">
             <h1 class="text-5xl m-5 font-mono p-5 font-bold ">Hello, Vue!</h1>
-            <h2 class="text-xl m-2 font-mono py-2">Title: {{title}}</h2>
-            <h2 class="text-xl m-2 font-mono py-2">Author: {{ author }}</h2>
-            <h2 class="text-xl m-2 font-mono py-2">Age: {{ age }}</h2>
-            <h2 class="text-xl m-2 font-mono py-2">X: {{ x }}</h2>
-            <h2 class="text-xl m-2 font-mono py-2">Y: {{ y }}</h2>
+            <div v-for="book in books" :key="book.id">
+                <div class="p-3">
+                    <h2 class="text-xl m-2 font-mono py-2">Title: {{book.title}}</h2>
+                    <h2 class="text-xl m-2 font-mono py-2">Author: {{ book.author }}</h2>
+                </div>
+            </div>
             <button class="rounded font-bold bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 m-2 p-3"
                 v-on:click="age++">Increase Age propertie by one!</button>
             <button class="bg-gradient-to-r from-green-400 to-blue-500 rounded font-bold bg-green-500 m-2 p-3"
-                @click="changeTitle('Oathbringer')">Change title!</>
+                @click="changeTitle('Oathbringer')">Change title!</button>
 
         </div>
         <button class="bg-gradient-to-r from-green-400 to-blue-500 rounded font-bold bg-green-500 m-2 p-3"
             @click='toogleBook'><span v-if="show">Hide Book</span><span v-else>Show Book</spa>
         </button>
+        <h2 class="text-xl m-2 font-mono py-2">X: {{ x }}</h2>
+        <h2 class="text-xl m-2 font-mono py-2">Y: {{ y }}</h2>
+
 
         <div class="grid grid-cols-2">
-            <div
-                class="p-8 w-10/12  md:w-10/12  text-center bg-gradient-to-r from-green-400 to-blue-500 m-3 inline-blox" v-on:mouseover="handleEvent">
+            <div class="p-8 w-10/12  md:w-10/12  text-center bg-gradient-to-r from-green-400 to-blue-500 m-3 inline-blox"
+                v-on:mouseover="handleEvent">
                 Mouseover
             </div>
-            <div
-                class="p-8 w-10/12  md:w-10/12  text-center bg-gradient-to-r from-green-400 to-blue-500 m-3 inline-blox" @mouseleave="handleEvent">
+            <div class="p-8 w-10/12  md:w-10/12  text-center bg-gradient-to-r from-green-400 to-blue-500 m-3 inline-blox"
+                @mouseleave="handleEvent">
                 Mouseleave
             </div>
-            <div
-                class="p-8 w-10/12  md:w-10/12  text-center bg-gradient-to-r from-green-400 to-blue-500 m-3 inline-blox" @dblclick="handleEvent">
+            <div class="p-8 w-10/12  md:w-10/12  text-center bg-gradient-to-r from-green-400 to-blue-500 m-3 inline-blox"
+                @dblclick="handleEvent">
                 double click
             </div>
-            <div
-                class="p-8 w-10/12  md:w-10/12  text-center bg-gradient-to-r from-green-400 to-blue-500 m-3 inline-blox" @mousemove="handleMouseMove">
+            <div class="p-8 w-10/12  md:w-10/12  text-center bg-gradient-to-r from-green-400 to-blue-500 m-3 inline-blox"
+                @mousemove="handleMouseMove">
                 Mouse Movement
             </div>
         </div>

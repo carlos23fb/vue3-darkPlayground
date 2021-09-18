@@ -4,7 +4,9 @@ const app = Vue.createApp({
             show: true,
             title: 'Final Empire',
             author: 'Brandon Sanderson',
-            age: 54
+            age: 54,
+            x: 0,
+            y: 0
         }
     },
     methods: {
@@ -13,6 +15,14 @@ const app = Vue.createApp({
         },
         toogleBook(){
             this.show = true ? !this.show : this.show
+        },
+        handleEvent($event){
+            console.log(`eje y: ${event.y} eje x: ${event.x}`)
+        },
+        handleMouseMove(event){
+            this.y = event.y
+            this.x = event.x
+            console.log(this.x, this.y)
         }
     },
     
